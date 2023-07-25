@@ -19,7 +19,7 @@ Here you can find [Pre-project study](https://www.canva.com/design/DAFon6U_fVM/r
 
 2. Evaluate the quality of the generated descriptions using ground truth GPT3 descriptions
 
-# Experiment 2:
+## Experiment 2:
 
 1. generated short GPT3 descriptions
 
