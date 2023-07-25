@@ -21,7 +21,7 @@ Here you can find [Pre-project study](https://www.canva.com/design/DAFon6U_fVM/r
 
 # Experiment 2:
 
-1.generated short GPT3 descriptions
+1. generated short GPT3 descriptions
 
    **Example:**<br />
    Clothes: Formal wear, evening gowns, cocktail dresses;<br />
