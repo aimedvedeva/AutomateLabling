@@ -18,7 +18,7 @@ Here you can find [Pre-project study](https://www.canva.com/design/DAFon6U_fVM/r
    The most probable notable designer brands or fashion houses associated with these garments are millennia<br />
 
 2. Evaluate the quality of the generated descriptions using ground truth GPT3 descriptions <br />
-[Test dataset](https://huggingface.co/datasets/alesanm/chanel_long_descriptions)
+[Test dataset] (https://huggingface.co/datasets/alesanm/chanel_long_descriptions)
 
 ## Experiment 2:
 
@@ -30,11 +30,11 @@ Here you can find [Pre-project study](https://www.canva.com/design/DAFon6U_fVM/r
    Occasion: Special events, galas, parties;<br />
    Details: Lace, sequins, high-neck, long-sleeves;<br />
    Trends: Feminine, romantic<br />
-[Train dataset](https://huggingface.co/datasets/alesanm/balensiaga_short_descriptions)
+[Train dataset] (https://huggingface.co/datasets/alesanm/balensiaga_short_descriptions)
 2. fine-tune the BLIP model
-[Fine-tined model](https://huggingface.co/alesanm/blip-image-captioning-base-fashionimages-finetuned)
+[Fine-tined model] (https://huggingface.co/alesanm/blip-image-captioning-base-fashionimages-finetuned)
 3. evaluate the quality of the generated descriptions with the help of fine-tuned BLIP using ground truth GPT3 descriptions
-[Test dataset](https://huggingface.co/datasets/alesanm/chanel_short_descriptions)
+[Test dataset] (https://huggingface.co/datasets/alesanm/chanel_short_descriptions)
 
 ## Results
 
