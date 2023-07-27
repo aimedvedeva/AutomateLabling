@@ -59,7 +59,7 @@ if submit_button:
 
     # Update the progress bar to 100% and display the final message
     my_bar.progress(100)
-    my_bar.text("Descriptions are generated!")
+    st.success("Descriptions are generated!")
 
     output = pd.DataFrame({'description': image_descriptions})
     csv = output.to_csv().encode('utf-8')
