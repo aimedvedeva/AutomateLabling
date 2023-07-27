@@ -8,7 +8,7 @@ import io
 
 def get_pil_image(file):
     file_bytes = np.asarray(bytearray(file.read()), dtype=np.uint8)
-    pil_image = Image.open(io.BytesIO(file_bytes))#Image.frombytes('RGB', (,128), image_data)
+    pil_image = Image.open(io.BytesIO(file_bytes))
     return pil_image
 
 
@@ -21,7 +21,7 @@ st.title("Let's describe your fashion photos!")
 # load the model (only if not already loaded)
 if 'model' not in st.session_state:
     with st.spinner('Model is loading...'):
-        model = EnsembleModel()#AutomateLablingModel()
+        model = AutomateLablingModel()
     st.session_state.model = model
     st.success('Done!')
 else:
