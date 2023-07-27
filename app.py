@@ -1,16 +1,14 @@
-import cv2
 import numpy as np
 import streamlit as st
 from PIL import Image
 import pandas as pd
 from model import AutomateLablingModel
-
+from models_ensemble import EnsembleModel
+import io
 
 def get_pil_image(file):
     file_bytes = np.asarray(bytearray(file.read()), dtype=np.uint8)
-    opencv_image = cv2.imdecode(file_bytes, 1)
-    opencv_image = cv2.cvtColor(opencv_image, cv2.COLOR_BGR2RGB)
-    pil_image = Image.fromarray(opencv_image)
+    pil_image = Image.open(io.BytesIO(file_bytes))#Image.frombytes('RGB', (,128), image_data)
     return pil_image
 
 
@@ -23,7 +21,7 @@ st.title("Let's describe your fashion photos!")
 # load the model (only if not already loaded)
 if 'model' not in st.session_state:
     with st.spinner('Model is loading...'):
-        model = AutomateLablingModel()
+        model = EnsembleModel()#AutomateLablingModel()
     st.session_state.model = model
     st.success('Done!')
 else:
