@@ -5,6 +5,7 @@ from PIL import Image
 import pandas as pd
 from model import AutomateLablingModel
 
+
 def get_pil_image(file):
     file_bytes = np.asarray(bytearray(file.read()), dtype=np.uint8)
     opencv_image = cv2.imdecode(file_bytes, 1)
@@ -12,21 +13,27 @@ def get_pil_image(file):
     pil_image = Image.fromarray(opencv_image)
     return pil_image
 
+
 def get_bar_percent(current_index, images_number):
-    return int(current_index*100/images_number)
+    return int(current_index * 100 / images_number)
+
 
 st.title("Let's describe your fashion photos!")
 
-# load the model
-with st.spinner('Model is loading...'):
-    model = AutomateLablingModel()
-st.success('Done!')
-
+# load the model (only if not already loaded)
+if 'model' not in st.session_state:
+    with st.spinner('Model is loading...'):
+        model = AutomateLablingModel()
+    st.session_state.model = model
+    st.success('Done!')
+else:
+    model = st.session_state.model
 
 pil_images = []
 image_descriptions = []
-output_csv = pd.DataFrame({'image':pil_images, 'description':image_descriptions})
+output_csv = pd.DataFrame({'image': pil_images, 'description': image_descriptions})
 submit_button = None
+
 
 with st.form('input form'):
     uploaded_files = st.file_uploader("Choose your images", type=["jpg", "png"], accept_multiple_files=True)
@@ -49,6 +56,10 @@ if submit_button:
         # draw image with the description
         st.image(pil_image, caption=description, width=400)
         image_descriptions.append(description)
+
+    # Update the progress bar to 100% and display the final message
+    my_bar.progress(100)
+    my_bar.text("Descriptions are generated!")
 
     output = pd.DataFrame({'description': image_descriptions})
     csv = output.to_csv().encode('utf-8')
