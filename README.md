@@ -1,7 +1,7 @@
 # AutomateLabling
 Take photos from the Vogue runway and generate a description
 
-Here you can find [Pre-project study](https://www.canva.com/design/DAFon6U_fVM/rdfINuKaYGVPYMjUJH09Gw/edit?utm_content=DAFon6U_fVM&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+Here you can find [Pre-project study](https://www.canva.com/design/DAFon6U_fVM/rdfINuKaYGVPYMjUJH09Gw/edit?utm_content=DAFon6U_fVM&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton) <br />
 Here you can [play](https://describefashion.streamlit.app/) with the model
 
 ## Experiment 1:
