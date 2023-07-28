@@ -1,7 +1,8 @@
 # AutomateLabling
 Take photos from the Vogue runway and generate a description
 
-Here you can find [Pre-project study](https://www.canva.com/design/DAFon6U_fVM/rdfINuKaYGVPYMjUJH09Gw/edit?utm_content=DAFon6U_fVM&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+Here you can find [Pre-project study](https://www.canva.com/design/DAFon6U_fVM/rdfINuKaYGVPYMjUJH09Gw/edit?utm_content=DAFon6U_fVM&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton) <br />
+Here you can [play](https://describefashion.streamlit.app/) with the model
 
 ## Experiment 1:
 1. Generate long descriptions using an ensemble of pre-trained models (BLIP for general description + Zero-Shot Image Classification)
@@ -41,6 +42,6 @@ Here you can find [Pre-project study](https://www.canva.com/design/DAFon6U_fVM/r
 ![Metrics](https://github.com/aimedvedeva/AutomateLabling/blob/main/log.jpg)
 We used two metrics to compare our descriptions with ground truth. Suggested to rely on cosine similarity between BERT embeddings, because it takes into account the meaning of the text rather than a set of symbols as BLUE. Both approaches are almost similarly good in terms of cosine similarity metric, however, there are two important things that should be treated with attention: </br>
 1. Ground truth descriptions were generated via the Openai GPT3 model. Although a good prompt was used, the quality of the output wasn't ideal. Sometimes it was too general. Since ground truth data is based on which we evaluate the quality of our models, probably, next time we should go to Toloka and ask real people to provide us with higher-quality descriptions.
-2. Fashion photos sometimes do not differ from each other enough inside one brand, e.g. Chanel. Sometimes, it does, e.g. Balenciaga. That is why we decided in the second experiment to fine-tune the BLIP model with 140 Balenciaga fashion photos, rather than with Chanel to be sure that we introduce to the model a more comprehensive range of possible options.
+2. Fashion photos sometimes do not differ from each other enough inside one brand, e.g. Chanel. Sometimes, it does, e.g. Balenciaga. That is why we decided in the second experiment to fine-tune the BLIP model with 140 Balenciaga fashion photos, rather than with Chanel to be sure that we introduce to the model a more comprehensive range of possible options. However, the training dataset is still small and needs more resources to train.
 3. Also we should mention that ideally for more confident evaluation metric experiments should be run numerous times to acquire much more data and evaluate confident interval for the man of the metric per each experiment.
 4. For the first experiment we used an ensemble of pre-trained models such as general BLIP + One-Shot Image Classification. For the second model, we created a list of queries with possible answers. Then, the model gave us the most probable answer per each query from the suggested list.  The important thing is that this list and, especially, the answer options should be revised very attentively because the model's quality hugely depends on it.
